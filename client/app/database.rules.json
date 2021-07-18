@@ -1,0 +1,9 @@
+{
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    // 読むのは誰でも可
+    ".read": true,
+    // 書くのは認証済みのみ
+    ".write": "auth != null"
+  }
+}

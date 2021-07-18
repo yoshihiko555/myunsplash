@@ -1,0 +1,14 @@
+version: '3'
+services:
+  client:
+    image: node:16
+    container_name: client
+    tty: true
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./client:/usr/src/app
+    ports:
+      - "3000:3000"
+      - "9005:9005"
+    working_dir: /usr/src/app

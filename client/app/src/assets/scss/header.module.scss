@@ -1,0 +1,14 @@
+.root {
+  flex-grow: 1;
+  margin-bottom: 30px;
+
+  .bar { box-shadow: none; }
+
+  .title {
+    font-weight: bold;
+    margin-left: .5em;
+    margin-right: .5em;
+  }
+  .is_not_auth { flex-grow: 1; }
+  .mx2 { margin: 0 8px; }
+}

@@ -1,0 +1,33 @@
+.my-masonry-grid {
+  display: flex;
+  margin-left: -30px;
+  width: auto;
+
+  .my-masonry-grid_column {
+    padding-left: 30px;
+    background-clip: padding-box;
+
+    > div {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.main {
+  width: 100%;
+
+  h3 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .bg_img {
+    margin: 0 auto;
+    width: 100vh;
+    height: 75vh;
+    background-image: url('../img/logo_transparent.png');
+    background-position: center;
+    background-size: cover;
+    opacity: .5;
+  }
+}
