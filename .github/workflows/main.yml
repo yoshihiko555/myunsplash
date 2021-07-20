@@ -9,8 +9,6 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@master
-      - name: Directory confirm
-        run: ls
       - name: Install Dependencies
         run: yarn install
         working-directory: ./client/app
