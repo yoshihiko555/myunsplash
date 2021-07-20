@@ -10,7 +10,7 @@ jobs:
       name: FIREBASE_ENV
     steps:
       - name: Environments
-        run: echo secrets.REACT_TEST
+        run: echo ${{secrets.REACT_TEST}}
       # - name: Checkout the repository
       #   uses: actions/checkout@master
       # - name: Install Dependencies
