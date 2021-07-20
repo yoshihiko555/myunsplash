@@ -6,11 +6,11 @@ on:
 jobs:
   deploy_firebase_hosting:
     runs-on: macos-latest
+    environment:
+      name: FIREBASE_ENV
     steps:
       - name: Checkout the repository
         uses: actions/checkout@master
-      - name: Directory confirm
-        run: ls
       - name: Install Dependencies
         run: yarn install
         working-directory: ./client/app
@@ -18,5 +18,5 @@ jobs:
         run: yarn build
         working-directory: ./client/app
       - name: Deploy to Firebase
-        run: yarn deploy --token=1//0eNQnPjjrecIPCgYIARAAGA4SNwF-L9IrDl1JFrAT8U0fWGS2BJP4noqjsDTDBqOYLxBMNt_VfrjFGz8LvkhumlV4HK--qxT0IJA
+        run: yarn deploy --token=${{secrets.FIREBASE_TOKEN}}
         working-directory: ./client/app
