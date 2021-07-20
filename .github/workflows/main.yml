@@ -4,6 +4,13 @@ on:
     branches:
       - master
 jobs:
+  build:
+    runs-on: macos-latest
+    environment:
+      name: REACT_ENV
+    steps:
+      - name: Env
+        run: echo ${{secrets.REACT_TEST}}
   deploy_firebase_hosting:
     runs-on: macos-latest
     environment:
