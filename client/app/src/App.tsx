@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Header,
   ImageList,
-  // FirebaseVarification
+  FirebaseVarification
 } from './components'
 import {
   AuthProvider,
