@@ -9,14 +9,16 @@ jobs:
     environment:
       name: FIREBASE_ENV
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@master
-      - name: Install Dependencies
-        run: yarn install
-        working-directory: ./client/app
-      - name: Build
-        run: yarn build
-        working-directory: ./client/app
-      - name: Deploy to Firebase
-        run: yarn deploy --token=${{secrets.FIREBASE_TOKEN}}
-        working-directory: ./client/app
+      - name: Environments
+        run: echo secrets.REACT_TEST
+      # - name: Checkout the repository
+      #   uses: actions/checkout@master
+      # - name: Install Dependencies
+      #   run: yarn install
+      #   working-directory: ./client/app
+      # - name: Build
+      #   run: yarn build
+      #   working-directory: ./client/app
+      # - name: Deploy to Firebase
+      #   run: yarn deploy --token=${{secrets.FIREBASE_TOKEN}}
+      #   working-directory: ./client/app
