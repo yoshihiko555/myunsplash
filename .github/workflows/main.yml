@@ -17,6 +17,7 @@ jobs:
         run: ls
   test:
     runs-on: macos-latest
+    needs: build
     steps:
       - name: ls
         run: ls
