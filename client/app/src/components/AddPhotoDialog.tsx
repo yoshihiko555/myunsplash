@@ -30,7 +30,7 @@ const AddPhotoDialog: React.FC<Props> = ({ open, onClose }) => {
   const urlRef = useRef()
   const [url, setUrl] = useState<string>('')
   // const [isUrlError, setIsUrlError] = useState(false)
-  const [disabled, setDisabled] = useState(false)
+  // const [disabled, setDisabled] = useState(false)
 
   // const handleChange = () => {
   //   // TODO : バリデーション
@@ -84,7 +84,7 @@ const AddPhotoDialog: React.FC<Props> = ({ open, onClose }) => {
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose}>Cancel</Button>
-        <Button onClick={handleSubmit.bind(this, { label, url })} color='primary' variant='contained' disabled={disabled}>Submit</Button>
+        <Button onClick={handleSubmit.bind(this, { label, url })} color='primary' variant='contained'>Submit</Button>
       </DialogActions>
     </Dialog>
   )
