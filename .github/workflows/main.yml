@@ -9,9 +9,14 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@master
+      - name: Directory confirm
+        run: ls
       - name: Install Dependencies
         run: yarn install
+        working-directory: ./client/app
       - name: Build
         run: yarn build
+        working-directory: ./client/app
       - name: Deploy to Firebase
         run: yarn deploy --token=$1//0eNQnPjjrecIPCgYIARAAGA4SNwF-L9IrDl1JFrAT8U0fWGS2BJP4noqjsDTDBqOYLxBMNt_VfrjFGz8LvkhumlV4HK--qxT0IJA
+        working-directory: ./client/app
