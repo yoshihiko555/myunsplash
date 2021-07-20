@@ -1,12 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
 import {
   Button
 } from '@material-ui/core'
 import styles from '../assets/scss/imageitem.module.scss'
 import {
-  AuthContext
-} from '../contexts'
-import { db } from '../assets/ts/firebase'
+  DeleteConfirmDialog
+} from './index'
 
 type Props = {
   id: string
@@ -15,12 +14,11 @@ type Props = {
   caption?: string
 }
 
-const ImageItem:React.FC<Props> = ({ id, src, label }) => {
-  const { currentUser } = useContext(AuthContext)
+const ImageItem:React.FC<Props> = React.memo(({ id, src, label }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
-  const imgDelete = () => {
-    console.log('delete', id)
-    db.ref(`users/${currentUser?.uid}/${id}`).remove()
+  const dialogClose = () => {
+    setIsOpen(false)
   }
 
   return (
@@ -28,14 +26,15 @@ const ImageItem:React.FC<Props> = ({ id, src, label }) => {
       <img className={styles.item} src={src} alt={label} />
       <Button
         className={styles.deleteBtn}
-        onClick={imgDelete}
+        onClick={() => { setIsOpen(true) }}
         color='secondary'
         variant='outlined'
         size='small'
       >Delete</Button>
       <p className={styles.caption}>{label}</p>
+      <DeleteConfirmDialog handleClose={dialogClose} open={isOpen} itemId={id} itemLabel={label} />
     </div>
   )
-}
+})
 
 export default ImageItem

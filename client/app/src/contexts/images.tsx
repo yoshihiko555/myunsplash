@@ -36,6 +36,7 @@ export const ACTION_TYPES = {
 
 /** Images取得用のアクションクリエイター */
 export const getImagesAction = (): ImageActionType => ({ type: ACTION_TYPES.GET_IMAGES })
+
 /** Images設定用のアクションクリエイター */
 export const setImagesAction = (
   payload: ImageResponse
@@ -43,6 +44,7 @@ export const setImagesAction = (
   type: ACTION_TYPES.SET_IMAGES,
   payload
 })
+
 /** Images初期化用のアクションクリエイター */
 export const initImagesAction = (): ImageActionType => ({ type: ACTION_TYPES.INIT_IMAGES})
 

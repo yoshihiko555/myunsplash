@@ -8,7 +8,7 @@
   .item {
     width: 100%;
     vertical-align: middle;
-    transition: all .2s ease-in-out;
+    transition: opacity .2s ease-in-out, transform .2s ease-in-out;
   }
 
   .deleteBtn {
@@ -31,7 +31,7 @@
     font-size: 16px;
     font-weight: 500;
     background: rgb(51 51 51 / 60%);
-    transition: all .2s ease-in-out;
+    transition: bottom .2s ease-in-out;
   }
 
   &:hover {
