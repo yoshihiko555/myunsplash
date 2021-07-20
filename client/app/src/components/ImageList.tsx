@@ -12,7 +12,7 @@ import {
   AuthContext,
   ImagesContext,
 } from '../contexts'
-import bg from '../assets/img/logo_transparent.png'
+// import bg from '../assets/img/logo_transparent.png'
 
 type Props = {}
 
@@ -23,15 +23,15 @@ const breakpointColumsObj = {
   500: 1
 }
 
-const mainBg = {
-  margin: '0 auto',
-  width: '100vh',
-  height: '75vh',
-  backgroundImage: `url(${bg})`,
-  backgroundPosition: 'center',
-  backgroundSize: 'cover',
-  opacity: '0.5'
-}
+// const mainBg = {
+//   margin: '0 auto',
+//   width: '100vh',
+//   height: '75vh',
+//   backgroundImage: `url(${bg})`,
+//   backgroundPosition: 'center',
+//   backgroundSize: 'cover',
+//   opacity: '0.5'
+// }
 
 const ImageList:React.FC<Props> = () => {
   const { isAuth } = useContext(AuthContext)
@@ -63,7 +63,8 @@ const ImageList:React.FC<Props> = () => {
                   <h3>No search images ...</h3>
                 </Grid>
                 <Grid item xs={12}>
-                  <div style={mainBg}></div>
+                  <div className={styles.bg_img}></div>
+                  {/* <div style={mainBg}></div> */}
                 </Grid>
             </div>
             )
@@ -73,7 +74,8 @@ const ImageList:React.FC<Props> = () => {
                 <h3>Welcome my unsplash</h3>
               </Grid>
               <Grid item xs={12}>
-                <div style={mainBg}></div>
+                <div className={styles.bg_img}></div>
+                {/* <div style={mainBg}></div> */}
               </Grid>
             </div>
           )}

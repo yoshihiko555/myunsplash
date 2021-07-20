@@ -17,6 +17,15 @@ jobs:
       - name: Build
         run: yarn build
         working-directory: ./client/app
+        env:
+          REACT_APP_APIKEY: ${{ secrets.REACT_APP_APIKEY }}
+          REACT_APP_AUTHDOMAIN: ${{ secrets.REACT_APP_AUTHDOMAIN }}
+          REACT_APP_DATABASEURL: ${{ secrets.REACT_APP_DATABASEURL }}
+          REACT_APP_PROJECT_ID: ${{ secrets.REACT_APP_PROJECT_ID }}
+          REACT_APP_STORAGE_BUCKET: ${{ secrets.REACT_APP_STORAGE_BUCKET }}
+          REACT_APP_MESSAGING_SENDER_ID: ${{ secrets.REACT_APP_MESSAGING_SENDER_ID }}
+          REACT_APP_APP_ID: ${{ secrets.REACT_APP_APP_ID }}
+          REACT_APP_MEASUREMENT_ID: ${{ secrets.REACT_APP_MEASUREMENT_ID }}
       - name: Deploy to Firebase
         run: yarn deploy --token=${{secrets.FIREBASE_TOKEN}}
         working-directory: ./client/app
