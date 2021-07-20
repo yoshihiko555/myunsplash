@@ -26,15 +26,15 @@ const AddPhotoDialog: React.FC<Props> = ({ open, onClose }) => {
   const { currentUser } = useContext(AuthContext)
   const labelRef = useRef()
   const [label, setLabel] = useState<string>('')
-  const [isLabelError, setIsLabelError] = useState(false)
+  // const [isLabelError, setIsLabelError] = useState(false)
   const urlRef = useRef()
   const [url, setUrl] = useState<string>('')
-  const [isUrlError, setIsUrlError] = useState(false)
+  // const [isUrlError, setIsUrlError] = useState(false)
   const [disabled, setDisabled] = useState(false)
 
-  const handleChange = () => {
-    // TODO : バリデーション
-  }
+  // const handleChange = () => {
+  //   // TODO : バリデーション
+  // }
 
   const handleClose = () => {
     onClose()
@@ -54,7 +54,7 @@ const AddPhotoDialog: React.FC<Props> = ({ open, onClose }) => {
       <DialogTitle id='dialog-title'>Add a new photo</DialogTitle>
       <DialogContent>
         <TextField
-          error={isLabelError}
+          // error={isLabelError}
           required
           fullWidth
           inputRef={labelRef}
@@ -68,7 +68,7 @@ const AddPhotoDialog: React.FC<Props> = ({ open, onClose }) => {
           }}
         />
         <TextField
-          error={isUrlError}
+          // error={isUrlError}
           required
           fullWidth
           inputRef={urlRef}

@@ -123,7 +123,7 @@ export const useImages = () => {
     } else {
       console.log('認証済みユーザーが存在しない')
     }
-  }, [])
+  }, [currentUser])
 
   /**
    * 引数で受け取った文字列をもとにFirebaseのQuery機能を使用して、データを取得しに行く
@@ -141,7 +141,7 @@ export const useImages = () => {
     } else {
       console.log('認証ユーザーが存在しない')
     }
-  }, [])
+  }, [currentUser])
 
   return {
     state,
